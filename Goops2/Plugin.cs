@@ -39,8 +39,8 @@ namespace Goops2
         }
         void Update()
         {
-            GameObject[] objs = GameObject.FindObjectsOfType(typeof(GameObject)).Select(g => g as GameObject).Where(g => g.GetComponent<Gplayer>() != null).ToArray();
-            foreach (GameObject g in objs)
+            Gplayer[] gp = Gplayer.FindObjectsOfType(typeof(Gplayer)).Select(g => g as Gplayer).ToArray();
+            foreach (Gplayer g in gp)
             {
                 if(Vector3.Distance(transform.position, g.transform.position) < 0.52f)
                 {
